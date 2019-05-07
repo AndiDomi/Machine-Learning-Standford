@@ -37,9 +37,9 @@ while i <= m,
   i = i + 1;
 end;
 
-j=2;
+j=1;
 temp_reg = 0;
-
+O0(1)=0;
 while j<= size(theta)(1),
     temp_reg = temp_reg + O0(j);
     j = j+1;
