@@ -37,11 +37,11 @@ while i <= m,
   i = i + 1;
 end;
 
-j=1;
+j=2;
 temp_reg = 0;
 O0(1)=0;
 while j<= size(theta)(1),
-    temp_reg = temp_reg + O0(j);
+    temp_reg = temp_reg + O0(j)^2;
     j = j+1;
 end
 
@@ -66,7 +66,7 @@ O0 = theta;
 O0 = theta;
 O0(1)=0;
 grad = ( (1/m)*( X'*( sigmoid(X*theta)-y))) + (lambda/m)*O0;
-  
+
 % working one , but why is working?
 %grad = (1/m) * (X' * (sigmoid(X*theta)-y));
 

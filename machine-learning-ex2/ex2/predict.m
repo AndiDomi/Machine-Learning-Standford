@@ -15,11 +15,22 @@ p = zeros(m, 1);
 %               You should set p to a vector of 0's and 1's
 %
 
+function g = sigmoid(z)
+      g=1./(1+e.^(-z));
+end
 
-
-
-
-
+ p = sigmoid(X*theta);
+ 
+i=1
+while i:size(p)(1),
+  if p(i)>=0.5,
+    p(i)=1;
+   else,
+   p(i)=0;
+  end
+i = i+1;
+end
+ 
 
 % =========================================================================
 
