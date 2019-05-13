@@ -10,8 +10,8 @@ function [all_theta] = oneVsAll(X, y, num_labels, lambda)
 % Some useful variables
 %how many rows
 m = size(X, 1);
-% how many columns
-n = size(X, 2);
+% how many classes we have, in this casse is K
+n = size(X, 2)
 
 % You need to return the following variables correctly 
 all_theta = zeros(num_labels, n + 1);
@@ -60,17 +60,15 @@ options = optimset('GradObj', 'on', 'MaxIter', 50);
 % 
 %     % Run fmincg to obtain the optimal theta
 %     % This function will return theta and the cost 
-all_theta = []
+all_theta = [];
 
 for c = 1:num_labels,
- for i = 1:n
  [theta] = ...
     fmincg (@(t)(lrCostFunction(t, X, y==c, lambda)), ...
           initial_theta, options);
-end
 % the reason why you should do it like this
 #https://www.coursera.org/learn/machine-learning/discussions/all/threads/sLIsSJU1EeW70BJZtLVfGQ
-all_theta = [all_theta ; theta'];
+all_theta = [all_theta; theta'];
 end
 % =========================================================================
 disp(all_theta)
